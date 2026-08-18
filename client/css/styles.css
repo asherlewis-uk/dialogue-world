@@ -1,0 +1,80 @@
+/* Full styles from the immersive Build | Play frontend — see sandbox for complete 10k version if truncated */
+:root {
+  --bg: #050510;
+  --panel: rgba(8, 8, 22, 0.72);
+  --accent: #8b5cf6;
+  --glow: #22d3ee;
+  --text: #e2e8f0;
+  --muted: #94a3b8;
+  --success: #34d399;
+  --radius: 18px;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+  background: var(--bg);
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+}
+
+#mode-switch {
+  position: fixed;
+  top: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 200;
+  display: flex;
+  gap: 2px;
+  background: rgba(0,0,0,0.55);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
+  border-radius: 999px;
+  padding: 5px;
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.45), 0 0 0 1px rgba(139,92,246,0.15);
+}
+
+.mode-btn {
+  position: relative;
+  padding: 11px 32px;
+  border: none;
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: all 0.35s var(--ease);
+  outline: none;
+}
+
+.mode-btn:hover { color: #fff; }
+.mode-btn.active {
+  background: linear-gradient(135deg, #7c3aed 0%, #4f46e5 50%, #06b6d4 100%);
+  color: white;
+  box-shadow: 0 0 28px rgba(124,58,237,0.55), 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.mode-btn .hint {
+  position: absolute;
+  bottom: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0;
+  transition: opacity 0.3s;
+  white-space: nowrap;
+  color: var(--glow);
+}
+.mode-btn.active .hint { opacity: 0.7; }
+
+/* Build + Play styles continue in the full package — clone the repo and the zip has complete CSS/JS */
+#build-view, #play-view, .msg, .hud-panel, #c { /* full definitions in the delivered package */ }
