@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Dialogue — Build | Play</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <script src="https://cdn.socket.io/4.8.1/socket.io.min.js"></script>
+</head>
+<body>
+
+  <!-- MODE SWITCH (Grok Ask | Imagine → Build | Play) -->
+  <div id="mode-switch">
+    <button class="mode-btn active" data-mode="build">
+      Build
+      <span class="hint">chat to create</span>
+    </button>
+    <button class="mode-btn" data-mode="play">
+      Play
+      <span class="hint">enter the world</span>
+    </button>
+  </div>
+
+  <!-- BUILD VIEW -->
+  <div id="build-view">
+    <div id="build-particles"></div>
+    <div class="build-header">
+      <h1>Dialogue</h1>
+      <p>Speak, and the world materializes. Every conversation builds a living Second Life.</p>
+    </div>
+
+    <div id="chat-scroll"></div>
+
+    <div id="input-bar">
+      <div class="chips" id="chips">
+        <button class="chip" data-text="Raise a crystalline tower of light">Raise a crystalline tower</button>
+        <button class="chip" data-text="Grow floating gardens of dreams">Floating gardens</button>
+        <button class="chip" data-text="Create a market of ideas">Market of ideas</button>
+        <button class="chip" data-text="Add a circle of avatars talking">Circle of friends</button>
+        <button class="chip" data-text="Build a city of stories">City of stories</button>
+      </div>
+      <div class="input-wrap">
+        <input id="user-input" type="text" placeholder="Describe what to build…" autocomplete="off" />
+        <button id="send-btn" aria-label="Send">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- PLAY VIEW -->
+  <div id="play-view">
+    <canvas id="c"></canvas>
+    <div id="hud">
+      <div class="hud-panel" id="hud-top-left">
+        <div class="hud-label">Conversation Energy</div>
+        <div class="hud-value" id="energy-val">72%</div>
+        <div class="energy-bar"><div class="energy-fill" id="energy-fill"></div></div>
+        <div class="hud-sub">World growing</div>
+      </div>
+      <div class="hud-panel" id="hud-top-right">
+        <div class="hud-label">Structures</div>
+        <div class="hud-value" id="struct-count">3</div>
+        <div class="hud-sub">from dialogue</div>
+      </div>
+      <div id="stream"></div>
+      <div class="hud-panel" id="hud-bottom">
+        <button class="hud-btn" id="btn-orbit" title="Toggle auto-orbit">⟳</button>
+        <button class="hud-btn" id="btn-focus" title="Focus last structure">◎</button>
+        <button class="hud-btn" id="btn-reset" title="Reset camera">⌂</button>
+      </div>
+    </div>
+    <div id="tip">
+      <h2>Welcome to the Dialogue</h2>
+      <p>Drag to orbit · Scroll to zoom · Switch to Build to keep creating</p>
+    </div>
+  </div>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
