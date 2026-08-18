@@ -1,7 +1,7 @@
 {
   "name": "dialogue-world-server",
-  "version": "1.0.0",
-  "description": "Full-stack real-time backend for Dialogue Build | Play — AI conversations that build a shared Second Life world",
+  "version": "1.1.0",
+  "description": "Full-stack real-time backend for Dialogue Build | Play — multi-world, auth, voice",
   "main": "index.js",
   "type": "module",
   "scripts": {
