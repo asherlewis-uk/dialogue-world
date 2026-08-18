@@ -10,28 +10,34 @@
 </head>
 <body>
 
-  <!-- MODE SWITCH (Grok Ask | Imagine → Build | Play) -->
   <div id="mode-switch">
-    <button class="mode-btn active" data-mode="build">
-      Build
-      <span class="hint">chat to create</span>
-    </button>
-    <button class="mode-btn" data-mode="play">
-      Play
-      <span class="hint">enter the world</span>
-    </button>
+    <button class="mode-btn active" data-mode="build">Build<span class="hint">chat to create</span></button>
+    <button class="mode-btn" data-mode="play">Play<span class="hint">enter the world</span></button>
   </div>
 
-  <!-- BUILD VIEW -->
+  <!-- top-left world + controls -->
+  <div id="top-controls">
+    <button id="btn-worlds" class="ctrl-btn" title="Worlds">🌐 <span id="world-name-label">The Dialogue</span></button>
+    <button id="btn-tts" class="ctrl-btn active" title="Architect voice (TTS)">🔊</button>
+    <button id="btn-voice" class="ctrl-btn" title="Voice presence">🎤</button>
+  </div>
+
+  <!-- world panel -->
+  <div id="world-panel">
+    <div class="wp-header">
+      <h3>Worlds</h3>
+      <button id="btn-create-world" class="chip">+ New World</button>
+    </div>
+    <div id="world-list"></div>
+  </div>
+
   <div id="build-view">
     <div id="build-particles"></div>
     <div class="build-header">
       <h1>Dialogue</h1>
       <p>Speak, and the world materializes. Every conversation builds a living Second Life.</p>
     </div>
-
     <div id="chat-scroll"></div>
-
     <div id="input-bar">
       <div class="chips" id="chips">
         <button class="chip" data-text="Raise a crystalline tower of light">Raise a crystalline tower</button>
@@ -43,15 +49,12 @@
       <div class="input-wrap">
         <input id="user-input" type="text" placeholder="Describe what to build…" autocomplete="off" />
         <button id="send-btn" aria-label="Send">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/>
-          </svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13"/><path d="M22 2l-7 20-4-9-9-4 20-7z"/></svg>
         </button>
       </div>
     </div>
   </div>
 
-  <!-- PLAY VIEW -->
   <div id="play-view">
     <canvas id="c"></canvas>
     <div id="hud">
