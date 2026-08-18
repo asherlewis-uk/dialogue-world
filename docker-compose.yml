@@ -1,0 +1,14 @@
+services:
+  dialogue:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3847:3847"
+    volumes:
+      - ./data:/app/data
+    environment:
+      - PORT=3847
+      - XAI_API_KEY=${XAI_API_KEY:-}
+      - OPENAI_API_KEY=${OPENAI_API_KEY:-}
+    restart: unless-stopped

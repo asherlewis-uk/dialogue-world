@@ -1,0 +1,17 @@
+{
+  "name": "dialogue-world",
+  "version": "1.0.0",
+  "description": "Full-stack AI conversational Second Life: Build mode chats create a shared living 3D world in Play mode. Node + Socket.io + immersive frontend.",
+  "private": true,
+  "scripts": {
+    "install:all": "cd server && npm install",
+    "start": "cd server && node index.js",
+    "dev": "cd server && node --watch index.js",
+    "docker": "docker compose up --build"
+  },
+  "keywords": ["second-life", "ai", "immersive", "webgl", "multiplayer", "conversational-world"],
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  }
+}

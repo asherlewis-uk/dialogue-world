@@ -1,0 +1,22 @@
+{
+  "name": "dialogue-world-server",
+  "version": "1.0.0",
+  "description": "Full-stack real-time backend for Dialogue Build | Play — AI conversations that build a shared Second Life world",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node --watch index.js"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.7.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "socket.io": "^4.8.1",
+    "uuid": "^10.0.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
